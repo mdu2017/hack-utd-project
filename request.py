@@ -1,5 +1,7 @@
 import os
-import requests, json
+import json
+from pip._vendor import requests
+
 
 # Read API key
 cred_file = open('key.txt', 'r')
@@ -22,6 +24,7 @@ create_account_json = {
     "zip": "15425"
   }
 }
+
 # Create a Savings Account
 response = requests.post( 
 	url, 
