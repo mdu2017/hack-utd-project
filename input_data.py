@@ -104,4 +104,3 @@ for account in create_account_json:
 	    print('accounts created')
     else:
         print(response.status_code)
-
