@@ -1,0 +1,5 @@
+Hackathon idea - captiol one
+
+
+Make a web app to allow customer to track finances (spending, savings, etc)
+ - could potentially include graphs and visuals
