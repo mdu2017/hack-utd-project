@@ -6,11 +6,10 @@ cred_file = open('key.txt', 'r')
 API_KEY = cred_file.read()
 cred_file.close()
 
-
-customerId = '1'
-
+# URL for api request
 url = f'http://api.nessieisreal.com/customers?key={API_KEY}'
 
+# Test JSON data
 create_account_json = {
   "first_name": "Mister",
   "last_name": "Rich",
@@ -22,6 +21,7 @@ create_account_json = {
     "zip": "15425"
   }
 }
+
 # Create a Savings Account
 response = requests.post( 
 	url, 

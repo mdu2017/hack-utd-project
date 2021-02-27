@@ -2,3 +2,4 @@ dbcred.txt
 key.txt
 cc-ca.crt
 db_cred.py
+__pycache__/
