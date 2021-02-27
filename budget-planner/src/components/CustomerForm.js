@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const CustomerForm = () => {
+const CustomerForm = ({description}) => {
   const classes = useStyles();
 
   const [popupOpen, setPopupOpen] = useState(false)
@@ -27,11 +27,14 @@ const CustomerForm = () => {
   return (
     <div className={classes.root}>
       <div>
+
+        <p><h2>{description}</h2></p>
+
         <TextField
           id="standard-full-width"
           label="Customer ID"
         //   style={{ margin: 8 }}
-          placeholder="Customer ID"
+          placeholder='Customer ID'
           fullWidth
           margin="normal"
           InputLabelProps={{
@@ -41,7 +44,7 @@ const CustomerForm = () => {
 
         {/* Get customer spending button */}
         <Button variant="contained" color="primary" onClick={() => setPopupOpen(true)}>
-          Get Customer Spending
+          Submit
         </Button>
 
           {/*  Displays popup button if Get customer spending is clicked */}
@@ -57,4 +60,4 @@ const CustomerForm = () => {
   );
 }
 
-export default LayoutTextFields;
+export default CustomerForm;

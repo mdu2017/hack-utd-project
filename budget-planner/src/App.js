@@ -2,12 +2,13 @@ import logo from './logo.svg';
 import './App.css';
 import { Button, Form, FormControl, TextField } from '@material-ui/core' 
 import CustomerForm from './components/CustomerForm'
+import TabBar from './components/TabBar'
 
 const App = () => {
   return (
     <div>
       <FormControl>
-        <CustomerForm/>
+        <TabBar/>
       </FormControl>
     </div>
   );
