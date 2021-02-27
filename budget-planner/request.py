@@ -1,5 +1,6 @@
 import os
-import requests, json
+import json
+from pip._vendor import requests
 
 # Read API key
 cred_file = open('key.txt', 'r')
