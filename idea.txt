@@ -4,3 +4,20 @@ Hackathon idea - captiol one
 Make a web app to allow customer to track finances (spending, savings, etc)
  - could potentially include graphs and visuals
  - Generate statistics for spending/savings
+
+
+
+ Tasks:
+  - Create test data
+    - Customers
+    - Accounts
+    - Bills
+    - spending
+    - Withdrawals
+    - Deposits
+
+
+  - Setup webpage
+    - Login?
+    - Get spending
+    - 
