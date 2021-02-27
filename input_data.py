@@ -7,9 +7,6 @@ cred_file = open('key.txt', 'r')
 API_KEY = cred_file.read()
 cred_file.close()
 
-
-customerId = '1'
-
 url = f'http://api.nessieisreal.com/customers?key={API_KEY}'
 
 create_account_json = [
