@@ -9,7 +9,7 @@ cred_file.close()
 
 url = f'http://api.nessieisreal.com/customers?key={API_KEY}'
 
-create_account_json = [
+create_customers_json = [
     {
   "first_name": "Mister",
   "last_name": "Rich",
@@ -90,14 +90,14 @@ create_account_json = [
     ]
 
 # Create a Savings Account
-for account in create_account_json:
+for customer in create_customers_json:
     response = requests.post( 
 	    url, 
-	    data=json.dumps(account),
+	    data=json.dumps(customer),
 	    headers={'content-type':'application/json'},
 	)
 
     if response.status_code == 201:
-	    print('accounts created')
+	    print('customers created')
     else:
         print(response.status_code)
