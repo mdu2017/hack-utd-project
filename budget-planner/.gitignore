@@ -26,8 +26,13 @@ yarn-error.log*
 src/components/api_key.txt
 
 # Python files
+customer_ids.txt
+bills_ids.txt
 dbcred.txt
 key.txt
 cc-ca.crt
 db_cred.py
 __pycache__/
+
+# Cockroach DB
+cockroach*
