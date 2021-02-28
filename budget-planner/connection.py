@@ -29,8 +29,7 @@ def init_db(conn):
         )
         cur.execute("CREATE TYPE PurchaseMedium as ENUM ('balance', 'rewards')")
         cur.execute("CREATE TYPE PurchaseStatus as ENUM ('pending', 'cancelled', 'completed')")
-        postgresquery = "CREATE TABLE IF NOT EXISTS Purchase (PurchaseID VARCHAR(24), Medium PurchaseMedium, PurchaseDate DATE, Amount INT, Status PurchaseStatus, Description VARCHAR(50), PRIMARY KEY (PurchaseID), MerchantID VARCHAR(30) REFERENCES Merchant(MerchantID), AccountID VARCHAR(30) REFERENCES Account(AccountID))"
-        cur.execute(postgresquery)
+        cur.execute("CREATE TABLE IF NOT EXISTS Purchase (PurchaseID VARCHAR(24), Medium PurchaseMedium, PurchaseDate DATE, Amount INT, Status PurchaseStatus, Description VARCHAR(50), PRIMARY KEY (PurchaseID), MerchantID VARCHAR(30) REFERENCES Merchant(MerchantID), AccountID VARCHAR(30) REFERENCES Account(AccountID))")
 
     conn.commit()
 
