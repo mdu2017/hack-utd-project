@@ -64,6 +64,7 @@ export default function TabBar() {
           <Tab label="Get Customer Spending" {...a11yProps(0)} />
           <Tab label="Get Customer Deposits" {...a11yProps(1)} />
           <Tab label="Get Customer Total Balance" {...a11yProps(2)} />
+          <Tab label="Get Customer Total Loans" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
       
@@ -75,6 +76,9 @@ export default function TabBar() {
       </TabPanel>
       <TabPanel value={value} index={2}>
         <CustomerForm description='View Customer Total Balance' value={[value]}/>
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+        <CustomerForm description='View Customer Total Loans' value={[value]}/>
       </TabPanel>
       
     </div>

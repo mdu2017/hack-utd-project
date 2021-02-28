@@ -8,6 +8,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
+import {useState, useEffect} from 'react';
+
 const useStyles = makeStyles({
   table: {
     minWidth: 400,
@@ -17,46 +19,54 @@ const useStyles = makeStyles({
 });
 
 
-function addSpending(custName, custSpending) {
-  return {custName, custSpending};
+function addAcct(id, name, type, rewards, balance, custID) {
+  return {id, name, type, rewards, balance, custID};
 }
-function addDeposit(custName, custDeposit) {
-    return {custName, custDeposit};
-  }
 
 const rows = []
 
-const DataTable = ({custName, custSpending, custDep, value}) => {
+const DataTable = ({customerAccts}) => {
   const classes = useStyles();
+
+   // Similar to componentDidMount and componentDidUpdate:
+   useEffect(() => {
+    // Update the rows using customer account data
+    // const {id, nickname, type, rewards, balance, customer_id} = customerAccts
+    // rows.push(addAcct(customerAccts._id, customerAccts.nickname, 
+    //     customerAccts.type, customerAccts.rewards, 
+    //     customerAccts.balance, customerAccts.customer_id))
+  });
 
   return (
       <div>
-          <p>{custName}</p>
-          {value === 0 ? <h1>{custSpending}</h1> : <h1></h1>}
-          {value === 1 ? <h1>{custDep}</h1> : <h1></h1>}
-
-      </div>
-    
-    // <TableContainer component={Paper}>
-    //   <Table className={classes.table} aria-label="simple table">
-    //     <TableHead>
-    //       <TableRow>
-    //         <TableCell ><h2>Customer Name</h2></TableCell>
-    //         <TableCell ><h2>Total Balance</h2></TableCell>
-    //       </TableRow>
-    //     </TableHead>
-    //     <TableBody>
-    //       {rows.map((row) => (
-    //         <TableRow key={row.customerName}>
-    //           <TableCell component="th" scope="row">
-    //             {row.customerName}
-    //           </TableCell>
-    //           <TableCell>{row.totalBalance}</TableCell>
-    //         </TableRow>
-    //       ))}
-    //     </TableBody>
-    //   </Table>
-    // </TableContainer>
+          <h1>{customerAccts}{console.log({customerAccts})}</h1>
+    <TableContainer component={Paper}>
+      <Table className={classes.table} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell ><h3>Account Name</h3></TableCell>
+            <TableCell ><h3>Type</h3></TableCell>
+            <TableCell ><h3>Rewards</h3></TableCell>
+            <TableCell ><h3>Balancee</h3></TableCell>
+            <TableCell ><h3>Customer ID</h3></TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {/* {rows.map((row, index) => (
+            <TableRow key={index}>
+              <TableCell component="th" scope="row">
+                {row.nickname}
+              </TableCell>
+              <TableCell>{row.type}</TableCell>
+              <TableCell>{row.rewards}</TableCell>
+              <TableCell>{row.balance}</TableCell>
+              <TableCell>{row.customer_id}</TableCell>
+            </TableRow>
+          ))} */}
+         </TableBody>
+      </Table>
+    </TableContainer> 
+    </div>
   );
 }
 
