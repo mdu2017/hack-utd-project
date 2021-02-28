@@ -1,0 +1,5 @@
+I210228 05:49:16.765447 1 util/log/sync_buffer.go:195 ⋮ [config] file created at: 2021/02/28 05:49:16
+I210228 05:49:16.765456 1 util/log/sync_buffer.go:195 ⋮ [config] running on machine: ‹David-Computer›
+I210228 05:49:16.765461 1 util/log/sync_buffer.go:195 ⋮ [config] binary: CockroachDB CCL v20.2.5 (x86_64-w64-mingw32, built 2021/02/16 13:03:41, go1.13.14)
+I210228 05:49:16.765465 1 util/log/sync_buffer.go:195 ⋮ [config] arguments: ‹[C:\Program Files (x86)\CockroachDB\cockroach-v20.2.5.windows-6.2-amd64\cockroach.exe start]›
+I210228 05:49:16.765473 1 util/log/sync_buffer.go:195 ⋮ [config] line format: [IWEF]yymmdd hh:mm:ss.uuuuuu goid file:line msg utf8=✓
