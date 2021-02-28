@@ -3,6 +3,6 @@ key.txt
 cc-ca.crt
 db_cred.py
 __pycache__/
-account_response_id.txt
+account_ids.txt
 customer_ids.txt
 bill_ids.txt
