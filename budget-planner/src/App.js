@@ -4,12 +4,14 @@ import { Button, Form, FormControl, TextField } from '@material-ui/core'
 import CustomerForm from './components/CustomerForm'
 import TabBar from './components/TabBar'
 
+require('dotenv').config()
+
 const App = () => {
   return (
     <div>
-      <FormControl>
+      {/* <FormControl> */}
         <TabBar/>
-      </FormControl>
+      {/* </FormControl> */}
     </div>
   );
 }

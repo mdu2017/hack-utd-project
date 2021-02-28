@@ -7,6 +7,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import CustomerForm from './CustomerForm';
+import DataTable from './DataTable'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -62,19 +63,20 @@ export default function TabBar() {
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
           <Tab label="Get Customer Spending" {...a11yProps(0)} />
           <Tab label="Get Customer Deposits" {...a11yProps(1)} />
-          <Tab label="Calculate Customer Disposable Income" {...a11yProps(2)} />
+          <Tab label="Get Customer Total Balance" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       
       <TabPanel value={value} index={0}>
-        <CustomerForm description='View Customer Spending'/>
+        <CustomerForm description='View Customer Spending' value={[value]}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <CustomerForm description='View Customer Deposits'/>
+        <CustomerForm description='View Customer Deposits' value={[value]}/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <CustomerForm description='Calculate Disposable Income'/>
+        <CustomerForm description='View Customer Total Balance' value={[value]}/>
       </TabPanel>
+      
     </div>
   );
 }
