@@ -62,7 +62,7 @@ create_accounts_json = [
 # Read customer ids
 customer_id_file = open('customer_ids.txt', 'r')
 
-# Create accounts and 
+# Create accounts and record the account ids
 for account, id in zip(create_accounts_json, customer_id_file.readlines()):
   id = id.replace('\n', '')
   response = requests.post( 
@@ -77,8 +77,8 @@ for account, id in zip(create_accounts_json, customer_id_file.readlines()):
     print(response.status_code)
 
   data = response.json()
-  response_id_file = open('account_response_id.txt', 'a')
-  response_id_file.write(data['objectCreated']['_id'] + '\n')
+  account_id_file = open('account_ids.txt', 'a')
+  account_id_file.write(data['objectCreated']['_id'] + '\n')
 
 customer_id_file.close()
-response_id_file.close()
+account_id_file.close()

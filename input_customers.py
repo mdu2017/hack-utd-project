@@ -7,10 +7,8 @@ cred_file = open('key.txt', 'r')
 API_KEY = cred_file.read()
 cred_file.close()
 
-url = f'http://api.nessieisreal.com/customers?key={API_KEY}'
-
 create_customers_json = [
-    {
+  {
   "first_name": "Mister",
   "last_name": "Rich",
   "address": {
@@ -19,8 +17,8 @@ create_customers_json = [
     "city": "New York",
     "state": "NY",
     "zip": "15425"
-  }
-    },
+    }
+  },
   {
   "first_name": "John",
   "last_name": "Doe",
@@ -30,9 +28,9 @@ create_customers_json = [
     "city": "Dallas",
     "state": "TX",
     "zip": "12345"
-  }
-    },
-    {
+    }
+  },
+  {
   "first_name": "Bob",
   "last_name": "Davey",
   "address": {
@@ -41,9 +39,9 @@ create_customers_json = [
     "city": "Houston",
     "state": "TX",
     "zip": "54637"
-  }
-    },
-    {
+    }
+  },
+  {
   "first_name": "Wulrus",
   "last_name": "Richie",
   "address": {
@@ -52,9 +50,9 @@ create_customers_json = [
     "city": "New York",
     "state": "NY",
     "zip": "46123"
-  }
-    },
-    {
+    }
+  },
+  {
   "first_name": "One-Punch",
   "last_name": "Man",
   "address": {
@@ -63,9 +61,9 @@ create_customers_json = [
     "city": "San Jose",
     "state": "CA",
     "zip": "71235"
-  }
-    },
-    {
+    }
+  },
+  {
   "first_name": "Gimmie",
   "last_name": "Job",
   "address": {
@@ -74,9 +72,9 @@ create_customers_json = [
     "city": "Austin",
     "state": "TX",
     "zip": "45387"
-  }
-    },
-    {
+    }
+  },
+  {
   "first_name": "Intern",
   "last_name": "Pls",
   "address": {
@@ -86,18 +84,24 @@ create_customers_json = [
     "state": "NW",
     "zip": "00000"
     }
-    }
-    ]
+  }
+]
 
-# Create a Savings Account
+# Create customers and record the customer ids
 for customer in create_customers_json:
-    response = requests.post( 
-	    url, 
-	    data=json.dumps(customer),
-	    headers={'content-type':'application/json'},
+  response = requests.post( 
+    url=f'http://api.nessieisreal.com/customers?key={API_KEY}', 
+    data=json.dumps(customer),
+    headers={'content-type':'application/json'},
 	)
 
-    if response.status_code == 201:
-	    print('customers created')
-    else:
-        print(response.status_code)
+  if response.status_code == 201:
+    print('customers created')
+  else:
+    print(response.status_code)
+
+  data = response.json()
+  account_id_file = open('customer_ids.txt', 'a')
+  account_id_file.write(data['objectCreated']['_id'] + '\n')
+
+account_id_file.close()
