@@ -15,8 +15,21 @@ What things you need to install the software
 - npm 6.13.6+ ([Download Link](https://nodejs.org/en/))
 - Git ([Download Link](https://git-scm.com/downloads)
 
-### Installation
+### Usage
 
+1. Clone the repository
+   - `git clone https://github.com/mdu2017/hack-utd-project.git`
+2. Enter the repository directory
+   - `cd hack-utd-project/budget-planner`
+3. Install dependencies
+   - `npm install`
+4. Run the application
+   - `npm start`
+
+### Libraries used
+
+- Material-UI
+- axios
 
 ## Authors
 
